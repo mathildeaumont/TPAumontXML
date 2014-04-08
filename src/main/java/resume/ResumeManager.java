@@ -13,16 +13,16 @@ public class ResumeManager {
 
     private List<Resume> resumeList;
 
+    public ResumeManager() {
+        resumeList = new ArrayList<Resume>();
+    }
+
     public List<Resume> getResumeList() {
         return resumeList;
     }
 
     public void setResumeList(List<Resume> resumeList) {
         this.resumeList = resumeList;
-    }
-
-    public ResumeManager() {
-        resumeList = new ArrayList<Resume>();
     }
 
     public void addResume(Resume resume) {

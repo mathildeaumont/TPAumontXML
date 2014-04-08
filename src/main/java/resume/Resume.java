@@ -11,14 +11,16 @@ public class Resume {
 
     String lastName;
     String firstName;
+    String objectif;
 
     public Resume() {
 
     }
 
-    public Resume(String lastName, String firstName) {
+    public Resume(String lastName, String firstName, String objectif) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.objectif = objectif;
     }
 
     public String getFirstName() {
@@ -39,6 +41,8 @@ public class Resume {
         this.lastName = lastName;
     }
 
+    public String getObjectif() { return objectif; }
 
-
+    @XmlElement
+    public void setObjectif(String objectif) { this.objectif = objectif; }
 }
