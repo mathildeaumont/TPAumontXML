@@ -13,16 +13,19 @@ public class Resume {
     String firstName;
     String objectif;
     SchoolManager schools;
+    ProfessionalExperienceManager professionalExperiences;
 
     public Resume() {
 
     }
 
-    public Resume(String lastName, String firstName, String objectif, SchoolManager schools) {
+    public Resume(String lastName, String firstName, String objectif,
+                  SchoolManager schools, ProfessionalExperienceManager professionalExperiences) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.objectif = objectif;
         this.schools = schools;
+        this.professionalExperiences = professionalExperiences;
     }
 
     public String getFirstName() {
@@ -57,4 +60,12 @@ public class Resume {
         this.schools = schools;
     }
 
+    public ProfessionalExperienceManager getProfessionalExperiences() {
+        return professionalExperiences;
+    }
+
+    @XmlElement
+    public void setProfessionalExperiences(ProfessionalExperienceManager professionalExperiences) {
+        this.professionalExperiences = professionalExperiences;
+    }
 }

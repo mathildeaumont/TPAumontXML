@@ -23,12 +23,22 @@ public class XMLController {
     public @ResponseBody
     ResumeManager getResumeInXML() {
         ResumeManager resumes = new ResumeManager();
+
+        // Ecoles
         SchoolManager schoolManager = new SchoolManager();
         School school = new School("Université de Rouen", "Licence informatique", "2012-2013");
         schoolManager.addSchool(school);
-        Resume resume = new Resume("Aumont", "Mathilde", "Acquérir de l'expérience", schoolManager);
+
+        // Experiences professionnelles
+        ProfessionalExperienceManager professionalExperienceManager = new ProfessionalExperienceManager();
+        ProfessionalExperience professionalExperience = new ProfessionalExperience("Progimax", "2013", "Développeur Web");
+        professionalExperienceManager.addProfessionnalExperience(professionalExperience);
+
+        Resume resume = new Resume("Aumont", "Mathilde", "Acquérir de l'expérience",
+                schoolManager, professionalExperienceManager);
         resumes.addResume(resume);
-        Resume resume2 = new Resume("Aumont", "Mathilde", "Acquérir de l'expérience", schoolManager);
+        Resume resume2 = new Resume("Aumont", "Mathilde", "Acquérir de l'expérience",
+                schoolManager, professionalExperienceManager);
         resumes.addResume(resume2);
         return resumes;
     }
