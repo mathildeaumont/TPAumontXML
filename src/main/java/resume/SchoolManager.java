@@ -8,25 +8,25 @@ import java.util.List;
  */
 public class SchoolManager {
 
-    private List<School> schoolList;
+    private List<School> school;
 
     public SchoolManager() {
-        schoolList = new ArrayList<School>();
+        school = new ArrayList<School>();
     }
 
-    public List<School> getSchoolList() {
-        return schoolList;
+    public List<School> getSchool() {
+        return school;
     }
 
-    public void setSchoolList(List<School> schoolList) {
-        this.schoolList = schoolList;
+    public void setSchool(List<School> school) {
+        this.school = school;
     }
 
-    public void addList(School school) {
-        schoolList.add(school);
+    public void addSchool(School school) {
+        this.school.add(school);
     }
 
-    public void removeResume(School school) {
-        schoolList.remove(school);
+    public void removeSchool(School school) {
+        this.school.remove(school);
     }
 }

@@ -11,26 +11,26 @@ import java.util.List;
 @XmlRootElement
 public class ResumeManager {
 
-    private List<Resume> resumeList;
+    private List<Resume> resume;
 
     public ResumeManager() {
-        resumeList = new ArrayList<Resume>();
+        resume = new ArrayList<Resume>();
     }
 
     public List<Resume> getResumeList() {
-        return resumeList;
+        return resume;
     }
 
     public void setResumeList(List<Resume> resumeList) {
-        this.resumeList = resumeList;
+        this.resume = resumeList;
     }
 
     public void addResume(Resume resume) {
-        resumeList.add(resume);
+        this.resume.add(resume);
     }
 
     public void removeResume(Resume resume) {
-        resumeList.remove(resume);
+        this.resume.remove(resume);
     }
 
 

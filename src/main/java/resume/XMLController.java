@@ -13,27 +13,31 @@ import resume.Resume;
 @RequestMapping("/resume")
 public class XMLController {
 
-    private ResumeManager resumeManager;
+    private ResumeManager resumes;
 
     public XMLController() {
-        resumeManager = new ResumeManager();
+        resumes = new ResumeManager();
     }
 
     @RequestMapping
     public @ResponseBody
     ResumeManager getResumeInXML() {
-        Resume resume = new Resume("Aumont", "Mathilde");
-        Resume resume2 = new Resume("Aumont", "Mathilde");
-        resumeManager.addResume(resume);
-        resumeManager.addResume(resume2);
-        return resumeManager;
+        ResumeManager resumes = new ResumeManager();
+        SchoolManager schoolManager = new SchoolManager();
+        School school = new School("Université de Rouen", "Licence informatique", "2012-2013");
+        schoolManager.addSchool(school);
+        Resume resume = new Resume("Aumont", "Mathilde", "Acquérir de l'expérience", schoolManager);
+        resumes.addResume(resume);
+        Resume resume2 = new Resume("Aumont", "Mathilde", "Acquérir de l'expérience", schoolManager);
+        resumes.addResume(resume2);
+        return resumes;
     }
 
-    @RequestMapping(value="{lastName}", method = RequestMethod.GET)
+    /*@RequestMapping(value="{lastName}", method = RequestMethod.GET)
     public @ResponseBody
     Resume getResumeInXML(@PathVariable String lastName, @PathVariable String firstName) {
-        Resume resume = new Resume("Aumont", "Mathilde");
+        Resume resume = new Resume("Aumont", "Mathilde", "Acquérir de l'expérience");
         return resume;
-    }
+    }*/
 
 }

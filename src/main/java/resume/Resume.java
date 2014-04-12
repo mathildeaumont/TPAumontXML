@@ -12,15 +12,17 @@ public class Resume {
     String lastName;
     String firstName;
     String objectif;
+    SchoolManager schools;
 
     public Resume() {
 
     }
 
-    public Resume(String lastName, String firstName, String objectif) {
+    public Resume(String lastName, String firstName, String objectif, SchoolManager schools) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.objectif = objectif;
+        this.schools = schools;
     }
 
     public String getFirstName() {
@@ -45,4 +47,14 @@ public class Resume {
 
     @XmlElement
     public void setObjectif(String objectif) { this.objectif = objectif; }
+
+    public SchoolManager getSchools() {
+        return schools;
+    }
+
+    @XmlElement
+    public void setSchools(SchoolManager schools) {
+        this.schools = schools;
+    }
+
 }
