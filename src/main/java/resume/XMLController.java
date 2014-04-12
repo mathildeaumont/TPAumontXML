@@ -41,11 +41,19 @@ public class XMLController {
         Language allemand = new Language("Allemand", "Moyen");
         languageManager.addLanguage(allemand);
 
+        // Compétences informatiques
+        ComputerSkillManager computerSkillManager = new ComputerSkillManager();
+        ComputerSkill java = new ComputerSkill("Java", "+++");
+        computerSkillManager.addComputerSkill(java);
+        ComputerSkill c = new ComputerSkill("C", "+");
+        computerSkillManager.addComputerSkill(c);
+
+
         Resume resume = new Resume("Aumont", "Mathilde", "Acquérir de l'expérience",
-                schoolManager, professionalExperienceManager, languageManager);
+                schoolManager, professionalExperienceManager, languageManager, computerSkillManager);
         resumes.addResume(resume);
         Resume resume2 = new Resume("Aumont", "Mathilde", "Acquérir de l'expérience",
-                schoolManager, professionalExperienceManager, languageManager);
+                schoolManager, professionalExperienceManager, languageManager, computerSkillManager);
         resumes.addResume(resume2);
         return resumes;
     }
