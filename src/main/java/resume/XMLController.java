@@ -34,11 +34,18 @@ public class XMLController {
         ProfessionalExperience professionalExperience = new ProfessionalExperience("Progimax", "2013", "Développeur Web");
         professionalExperienceManager.addProfessionnalExperience(professionalExperience);
 
+        // Langues
+        LanguageManager languageManager = new LanguageManager();
+        Language anglais = new Language("Anglais", "Moyen");
+        languageManager.addLanguage(anglais);
+        Language allemand = new Language("Allemand", "Moyen");
+        languageManager.addLanguage(allemand);
+
         Resume resume = new Resume("Aumont", "Mathilde", "Acquérir de l'expérience",
-                schoolManager, professionalExperienceManager);
+                schoolManager, professionalExperienceManager, languageManager);
         resumes.addResume(resume);
         Resume resume2 = new Resume("Aumont", "Mathilde", "Acquérir de l'expérience",
-                schoolManager, professionalExperienceManager);
+                schoolManager, professionalExperienceManager, languageManager);
         resumes.addResume(resume2);
         return resumes;
     }

@@ -8,9 +8,25 @@ import java.util.List;
  */
 public class LanguageManager {
 
-    private List<Language> languageList;
+    private List<Language> language;
 
     public LanguageManager() {
-        languageList = new ArrayList<Language>();
+        language = new ArrayList<Language>();
+    }
+
+    public List<Language> getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(List<Language> language) {
+        this.language = language;
+    }
+
+    public void addLanguage(Language language) {
+        this.language.add(language);
+    }
+
+    public void removeLanguage(Language language) {
+        this.language.remove(language);
     }
 }
