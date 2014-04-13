@@ -41,6 +41,13 @@ public class XMLController {
         Language allemand = new Language("Allemand", "Moyen");
         languageManager.addLanguage(allemand);
 
+        // Expériences
+        ExperienceManager experienceManager = new ExperienceManager();
+        Experience exp1 = new Experience("Site internet de l'AMAP du Roumois", "Projet annuel de master 1 GIL", "2013-2014");
+        experienceManager.addExperience(exp1);
+        Experience exp2 = new Experience("Sudoku", "Projet annuel de licence 3 informatique - Java", "2012-2013");
+        experienceManager.addExperience(exp2);
+
         // Compétences informatiques
         ComputerSkillManager computerSkillManager = new ComputerSkillManager();
         ComputerSkill java = new ComputerSkill("Java", "+++");
@@ -50,10 +57,10 @@ public class XMLController {
 
 
         Resume resume = new Resume("Aumont", "Mathilde", "Acquérir de l'expérience",
-                schoolManager, professionalExperienceManager, languageManager, computerSkillManager);
+                schoolManager, professionalExperienceManager, languageManager, experienceManager, computerSkillManager);
         resumes.addResume(resume);
         Resume resume2 = new Resume("Aumont", "Mathilde", "Acquérir de l'expérience",
-                schoolManager, professionalExperienceManager, languageManager, computerSkillManager);
+                schoolManager, professionalExperienceManager, languageManager, experienceManager, computerSkillManager);
         resumes.addResume(resume2);
         return resumes;
     }

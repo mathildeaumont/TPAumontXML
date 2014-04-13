@@ -22,15 +22,6 @@ public class Experience {
         this.year = year;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    @XmlElement
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -40,12 +31,21 @@ public class Experience {
         this.description = description;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    @XmlElement
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getYear() {
         return year;
     }
 
     @XmlElement
-    public void setYearExperience(String year) {
+    public void setYear(String year) {
         this.year = year;
     }
 }

@@ -15,6 +15,7 @@ public class Resume {
     SchoolManager schools;
     ProfessionalExperienceManager professionalExperiences;
     LanguageManager languages;
+    ExperienceManager experiences;
     ComputerSkillManager computerSkills;
 
     public Resume() {
@@ -23,13 +24,14 @@ public class Resume {
 
     public Resume(String lastName, String firstName, String objectif, SchoolManager schools,
                   ProfessionalExperienceManager professionalExperiences, LanguageManager languages,
-                  ComputerSkillManager computerSkills) {
+                  ExperienceManager experiences, ComputerSkillManager computerSkills) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.objectif = objectif;
         this.schools = schools;
         this.professionalExperiences = professionalExperiences;
         this.languages = languages;
+        this.experiences = experiences;
         this.computerSkills = computerSkills;
     }
 
@@ -85,6 +87,15 @@ public class Resume {
     @XmlElement
     public void setLanguages(LanguageManager languages) {
         this.languages = languages;
+    }
+
+    public ExperienceManager getExperiences() {
+        return experiences;
+    }
+
+    @XmlElement
+    public void setExperiences(ExperienceManager experiences) {
+        this.experiences = experiences;
     }
 
     public ComputerSkillManager getComputerSkills() {
