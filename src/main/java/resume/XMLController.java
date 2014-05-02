@@ -1,6 +1,7 @@
 package resume; /**
  * Created by Mathilde on 01/04/14.
  */
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,8 +21,9 @@ public class XMLController {
     }
 
     @RequestMapping
-    public @ResponseBody
-    ResumeManager getResumeInXML() {
+    public
+    @ResponseBody
+    ResumeManager getResumes() {
         ResumeManager resumes = new ResumeManager();
 
         // Ecoles

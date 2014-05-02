@@ -12,9 +12,11 @@ import java.util.List;
 public class ResumeManager {
 
     private List<Resume> resume;
+    private int nbResume;
 
     public ResumeManager() {
         resume = new ArrayList<Resume>();
+        nbResume = 0;
     }
 
     public List<Resume> getResumeList() {
@@ -26,12 +28,13 @@ public class ResumeManager {
     }
 
     public void addResume(Resume resume) {
+        nbResume++;
+        resume.setId(nbResume);
         this.resume.add(resume);
     }
 
     public void removeResume(Resume resume) {
         this.resume.remove(resume);
     }
-
 
 }

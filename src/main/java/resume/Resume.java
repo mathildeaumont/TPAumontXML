@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "resume")
 public class Resume {
 
+    int id;
     String lastName;
     String firstName;
     String objectif;
@@ -106,4 +107,9 @@ public class Resume {
     public void setComputerSkills(ComputerSkillManager computerSkills) {
         this.computerSkills = computerSkills;
     }
+
+    public int getId() { return id; }
+
+    @XmlElement
+    public void setId(int id) { this.id = id; }
 }
