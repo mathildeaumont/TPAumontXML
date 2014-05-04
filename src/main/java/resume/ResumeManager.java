@@ -19,11 +19,11 @@ public class ResumeManager {
         nbResume = 0;
     }
 
-    public List<Resume> getResumeList() {
+    public List<Resume> getResume() {
         return resume;
     }
 
-    public void setResumeList(List<Resume> resumeList) {
+    public void setResume(List<Resume> resumeList) {
         this.resume = resumeList;
     }
 
