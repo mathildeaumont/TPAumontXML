@@ -37,4 +37,13 @@ public class ResumeManager {
         this.resume.remove(resume);
     }
 
+    public Resume getResume(int id) {
+        for (Resume res : resume) {
+            if (res.getId() == id) {
+                return res;
+            }
+        }
+        return null;
+    }
+
 }

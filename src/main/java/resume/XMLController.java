@@ -3,10 +3,7 @@ package resume; /**
  */
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import resume.Resume;
 
 
@@ -14,17 +11,10 @@ import resume.Resume;
 @RequestMapping("/resume")
 public class XMLController {
 
-    private ResumeManager resumes;
+    private static ResumeManager resumes;
 
     public XMLController() {
         resumes = new ResumeManager();
-    }
-
-    @RequestMapping
-    public
-    @ResponseBody
-    ResumeManager getResumes() {
-        ResumeManager resumes = new ResumeManager();
 
         // Ecoles
         SchoolManager schoolManager = new SchoolManager();
@@ -64,14 +54,22 @@ public class XMLController {
         Resume resume2 = new Resume("Aumont", "Mathilde", "Acquérir de l'expérience",
                 schoolManager, professionalExperienceManager, languageManager, experienceManager, computerSkillManager);
         resumes.addResume(resume2);
+    }
+
+    @RequestMapping(method = RequestMethod.GET)
+    public @ResponseBody ResumeManager getResumes() {
         return resumes;
     }
 
-    /*@RequestMapping(value="{lastName}", method = RequestMethod.GET)
-    public @ResponseBody
-    Resume getResumeInXML(@PathVariable String lastName, @PathVariable String firstName) {
-        Resume resume = new Resume("Aumont", "Mathilde", "Acquérir de l'expérience");
-        return resume;
-    }*/
+    @RequestMapping(value="{id}", method = RequestMethod.GET)
+    public @ResponseBody Resume getResume(@PathVariable int id) {
+        return resumes.getResume(id);
+    }
+
+    @RequestMapping(method = RequestMethod.PUT)
+    public @ResponseBody int putCVInXML(@RequestBody Resume resume) {
+        resumes.addResume(resume);
+        return resume.getId();
+    }
 
 }
