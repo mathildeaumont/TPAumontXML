@@ -5,8 +5,11 @@ package resume; /**
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "resume")
+@XmlType(propOrder = {"id", "lastName", "firstName", "objectif", "schools",
+        "professionalExperiences", "experiences", "languages", "computerSkills"})
 public class Resume {
 
     int id;
