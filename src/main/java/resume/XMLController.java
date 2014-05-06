@@ -67,9 +67,8 @@ public class XMLController {
     }
 
     @RequestMapping(method = RequestMethod.PUT)
-    public @ResponseBody int putCVInXML(@RequestBody Resume resume) {
+    public @ResponseBody void addResume(@RequestBody Resume resume) {
         resumes.addResume(resume);
-        return resume.getId();
     }
 
 }

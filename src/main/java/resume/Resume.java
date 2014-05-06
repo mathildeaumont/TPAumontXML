@@ -23,7 +23,15 @@ public class Resume {
     ComputerSkillManager computerSkills;
 
     public Resume() {
-
+        this.id = 0;
+        this.firstName = "";
+        this.lastName = "";
+        this.objectif = "";
+        this.schools = new SchoolManager();
+        this.professionalExperiences = new ProfessionalExperienceManager();
+        this.languages = new LanguageManager();
+        this.experiences = new ExperienceManager();
+        this.computerSkills = new ComputerSkillManager();
     }
 
     public Resume(String lastName, String firstName, String objectif, SchoolManager schools,
